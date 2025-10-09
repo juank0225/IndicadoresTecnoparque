@@ -1,0 +1,94 @@
+/* ──────────────── NAVBAR ──────────────── */
+.components-navbar {
+  /* Variables configurables */
+  --navbar-text-color: #fff;
+  --navbar-gap: 1rem;
+  --navbar-hover-bg: #3E8C2A; /* Fondo del hover */
+}
+
+/* Enlaces del navbar */
+.components-navbar nav a {
+  color: var(--navbar-text-color) !important;
+  padding: 0 var(--navbar-gap);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+}
+
+/* Hover y página activa */
+.components-navbar nav a:hover,
+.components-navbar nav a[aria-current="page"] {
+  opacity: 0.95;
+}
+
+/* Fondo de hover (excepto para .profile-btn) */
+.components-navbar nav a:not(.profile-btn):hover,
+.components-navbar nav a[aria-current="page"]:not(.profile-btn) {
+  background: var(--navbar-hover-bg) !important;
+  color: #fff !important;
+}
+
+/* Logo / texto izquierdo */
+.components-navbar .logo-text {
+  color: var(--navbar-text-color) !important;
+  letter-spacing: 0.04em;
+}
+
+/* Botón de perfil */
+.components-navbar .profile-btn {
+  /* ejemplo: botón más pequeño */
+  padding: 0.02rem 0.07rem;
+  font-size: 0.875rem;
+  min-width: 3.5rem;
+  height: 34px;
+  border-radius: 99px;
+
+  color: var(--navbar-text-color) !important;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px solid #fff;
+  background: transparent;
+  font-weight: 600;
+  text-decoration: none;
+  /* Movemos el botón visualmente hacia la izquierda */
+  position: relative;
+  right: 28px; /* ajustar este valor (px) para mover más/menos hacia la izquierda */
+  transition:
+    background 0.18s ease,
+    color 0.18s ease,
+    transform 0.12s ease;
+}
+
+/* Hover / activo del botón de perfil */
+.components-navbar .profile-btn:hover,
+.components-navbar .profile-btn:focus,
+.components-navbar .profile-btn[aria-current="page"] {
+  background: #fff;
+  color: #39A900 !important;
+  transform: translateY(-1px);
+}
+
+.components-navbar .logo-sirt {
+  height: 44px;       /* aumentado para agrandar la imagen */
+  width: auto;
+  object-fit: contain;
+  display: inline-block;
+  margin-right: 3rem; /* espacio entre el logo y el panel (ajusta a tu gusto) */
+  margin-left: 2rem;
+}
+
+/* Mantener el logo razonable en pantallas pequeñas */
+@media (max-width: 640px) {
+  .components-navbar .logo-sirt {
+    height: 32px;
+    margin-right: 0.5rem;
+  }
+}
+
+/* Opcional: si quieres ocultar la versión textual en otros lugares */
+.components-navbar .logo-text {
+  display: none;
+}

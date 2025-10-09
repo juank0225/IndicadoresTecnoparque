@@ -1,10 +1,16 @@
 import { NavLink, Link } from 'react-router-dom'
+import './components.css' // <-- importar estilos compartidos
+import IndicaSena from '../assets/IndicaSena.jpg' // <-- agregar import de la imagen
 
 const NavItem = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `px-3 py-2 rounded-md text-sm font-medium ${isActive ? 'bg-[var(--tp-dark-blue)] text-white' : 'text-gray-700 hover:bg-gray-100'}`
+      `min-h-[55px] flex items-center px-8 text-lg font-medium text-white ${
+        isActive 
+          ? 'bg-[#ffffff]' 
+          : 'hover:bg-[#ffffff]'
+      }`
     }
   >
     {children}
@@ -13,19 +19,35 @@ const NavItem = ({ to, children }: { to: string; children: React.ReactNode }) =>
 
 export default function Navbar() {
   return (
-    <header className="bg-white shadow-sm">
-      <div className="container flex items-center justify-between py-4">
-        <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-md bg-[var(--tp-dark-blue)] flex items-center justify-center text-white font-bold">TP</div>
-          <div className="text-lg font-semibold">TecnoParque Bogotá</div>
-        </Link>
-        <nav className="flex items-center gap-2">
-          <NavItem to="/tecnoparque">Tecnoparque</NavItem>
-          <NavItem to="/tecnoacademia">Tecnoacademia</NavItem>
-          <NavItem to="/laboratorio">Laboratorio</NavItem>
-          <NavItem to="/investigacion">Investigación</NavItem>
-          <NavItem to="/perfil">Perfil</NavItem>
-        </nav>
+    <header className="components-navbar bg-[#39A900] w-full min-h-[55px] shadow-lg" style={{height: '55px'}}>
+      <div className="w-full h-full flex items-stretch justify-between">
+        <div className="flex items-stretch h-full">
+          <Link to="/" className="flex items-center gap-4 px-8 min-h-[55px]">
+            <img
+              src={IndicaSena}
+              alt="SIRT"
+              className="logo-sirt"
+              onError={(e) => e.currentTarget.style.display = 'none'}
+            />
+          </Link>
+
+          <nav className="flex items-stretch h-full gap-6">
+            <NavItem to="/">Panel</NavItem>
+            <NavItem to="/tecnoparque">Tecnoparque</NavItem>
+            <NavItem to="/tecnoacademia">Tecnoacademia</NavItem>
+            <NavItem to="/laboratorio">Laboratorio</NavItem>
+            <NavItem to="/investigacion">Investigación</NavItem>
+          </nav>
+        </div>
+
+        <div className="flex items-center px-8">
+          <Link
+            to="/perfil"
+            className="profile-btn"
+          >
+            Perfil
+          </Link>
+        </div>
       </div>
     </header>
   )
