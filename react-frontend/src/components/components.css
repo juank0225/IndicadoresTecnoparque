@@ -92,3 +92,11 @@
 .components-navbar .logo-text {
   display: none;
 }
+
+.footer {
+  font-size: 19px;
+  color: #ffff; /* gris medio */
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #39A900;
+}

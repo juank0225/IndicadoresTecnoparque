@@ -1,12 +1,12 @@
 import { NavLink, Link } from 'react-router-dom'
 import './components.css' // <-- importar estilos compartidos
-import IndicaSena from '../assets/IndicaSena.jpg' // <-- agregar import de la imagen
+import IndicaSena from '../assets/IndicaSena.jpg' 
 
 const NavItem = ({ to, children }: { to: string; children: React.ReactNode }) => (
   <NavLink
     to={to}
     className={({ isActive }) =>
-      `min-h-[55px] flex items-center px-8 text-lg font-medium text-white ${
+      `min-h-[0px] flex items-center px-8 text-lg font-medium text-white ${
         isActive 
           ? 'bg-[#ffffff]' 
           : 'hover:bg-[#ffffff]'
