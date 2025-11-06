@@ -1,6 +1,9 @@
 import React from 'react'
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Layout from '@/components/Layout'
+
+// Login
+import Login from '@/pages/Login'
 
 // Pages (lazy loading could be added later)
 import TecnoparqueDashboard from '@/pages/Tecnoparque/Dashboard'
@@ -22,13 +25,18 @@ import InvestigacionAnalisis from '@/pages/Investigacion/Analisis'
 import PerfilUsuario from '@/pages/Perfil/PerfilUsuario'
 import PerfilConfiguracion from '@/pages/Perfil/Configuracion'
 import PerfilNotificaciones from '@/pages/Perfil/Notificaciones'
+
 import MainDashboard from '@/pages/MainDashboard'
 
 export default function AppRoutes() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Layout />}> 
+        {/* 🔹 Ruta inicial: login */}
+        <Route path="/" element={<Login />} />
+
+        {/* 🔹 Resto de la app con layout */}
+        <Route path="/app" element={<Layout />}>
           <Route index element={<MainDashboard />} />
 
           <Route path="tecnoparque">
@@ -60,9 +68,10 @@ export default function AppRoutes() {
             <Route path="configuracion" element={<PerfilConfiguracion />} />
             <Route path="notificaciones" element={<PerfilNotificaciones />} />
           </Route>
-
-          <Route path="*" element={<div className="container">Página no encontrada</div>} />
         </Route>
+
+        {/* 🔹 Página no encontrada */}
+        <Route path="*" element={<div className="container">Página no encontrada</div>} />
       </Routes>
     </BrowserRouter>
   )
