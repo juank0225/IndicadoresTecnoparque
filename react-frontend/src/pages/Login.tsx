@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react"
+import { useState, useEffect } from "react"
 import FotoTecnoparque from "../assets/FotoTecnoparque.jpg"
 
 export default function Login() {
