@@ -12,7 +12,6 @@ import TecnoparqueReportes from '@/pages/Tecnoparque/Reportes'
 
 import TecnoacademiaDashboard from '@/pages/Tecnoacademia/Dashboard'
 import TecnoacademiaProyectos from '@/pages/Tecnoacademia/Proyectos'
-import TecnoacademiaGraficas from '@/pages/Tecnoacademia/Graficas'
 
 import LaboratorioDashboard from '@/pages/Laboratorio/Dashboard'
 import LaboratorioEquipos from '@/pages/Laboratorio/Equipos'
@@ -48,7 +47,6 @@ export default function AppRoutes() {
           <Route path="tecnoacademia">
             <Route index element={<TecnoacademiaDashboard />} />
             <Route path="proyectos" element={<TecnoacademiaProyectos />} />
-            <Route path="graficas" element={<TecnoacademiaGraficas />} />
           </Route>
 
           <Route path="laboratorio">

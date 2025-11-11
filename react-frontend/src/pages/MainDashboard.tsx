@@ -28,7 +28,7 @@ export default function MainDashboard() {
             {
               title: "Red Tecnoparque",
               desc: "Gestión y seguimiento de proyectos nacionales de innovación y desarrollo.",
-              path: "/tecnoparque",
+              path: "/app/tecnoparque",
             },
             {
               title: "Red Tecnoacademia",
