@@ -297,7 +297,10 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard-container">
-      <h1 className="dashboard-title" style={{ color: primaryColor }}>
+      <h1 className="dashboard-title" style={{ color: '#39a900', 
+          fontWeight: 'bold', 
+          textAlign: 'center',
+          padding: '0 0.5rem' }}>
         Indicadores Tecnoacademia
       </h1>
       

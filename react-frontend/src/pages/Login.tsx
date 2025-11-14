@@ -13,7 +13,7 @@ export default function Login() {
 
   const handleLogin = () => {
     // Navegar a MainDashboard
-    window.location.href = "/app"
+    window.location.href = "#/app"
   }
 
   return (

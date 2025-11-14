@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import FotoTecnoparque from "../assets/FotoTecnoparque.jpg";
-import "./TecnoParqueSection.css"; // 🔹 Importa el CSS separado
+import "./MainDashboardCss.css"; // 🔹 Importa el CSS separado
 import SenaLogo from "../assets/sena.png";
 
 export default function MainDashboard() {
@@ -33,17 +33,17 @@ export default function MainDashboard() {
             {
               title: "Red Tecnoacademia",
               desc: "Programas y actividades para fomentar el talento joven.",
-              path: "/tecnoacademia",
+              path: "/app/tecnoacademia",
             },
             {
               title: "Laboratorio",
               desc: "Espacio de experimentación y validación de tecnologías emergentes.",
-              path: "/laboratorio",
+              path: "/app/laboratorio",
             },
             {
               title: "Investigación",
               desc: "Impulso a la investigación aplicada e innovación tecnológica.",
-              path: "/investigacion",
+              path: "/app/investigacion",
             },
           ].map((card, i) => (
             <Link key={i} to={card.path} className="card">

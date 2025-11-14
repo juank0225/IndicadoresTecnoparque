@@ -1,5 +1,4 @@
-import React from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Layout from '@/components/Layout'
 
 // Login
@@ -7,7 +6,6 @@ import Login from '@/pages/Login'
 
 // Pages (lazy loading could be added later)
 import TecnoparqueDashboard from '@/pages/Tecnoparque/Dashboard'
-import TecnoparqueEstadisticas from '@/pages/Tecnoparque/Estadisticas'
 import TecnoparqueReportes from '@/pages/Tecnoparque/Reportes'
 
 import TecnoacademiaDashboard from '@/pages/Tecnoacademia/Dashboard'
@@ -29,7 +27,7 @@ import MainDashboard from '@/pages/MainDashboard'
 
 export default function AppRoutes() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         {/* 🔹 Ruta inicial: login */}
         <Route path="/" element={<Login />} />
@@ -40,7 +38,6 @@ export default function AppRoutes() {
 
           <Route path="tecnoparque">
             <Route index element={<TecnoparqueDashboard />} />
-            <Route path="estadisticas" element={<TecnoparqueEstadisticas />} />
             <Route path="reportes" element={<TecnoparqueReportes />} />
           </Route>
 
@@ -71,6 +68,6 @@ export default function AppRoutes() {
         {/* 🔹 Página no encontrada */}
         <Route path="*" element={<div className="container">Página no encontrada</div>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
