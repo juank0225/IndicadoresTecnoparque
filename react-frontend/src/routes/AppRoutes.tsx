@@ -12,8 +12,6 @@ import TecnoacademiaDashboard from '@/pages/Tecnoacademia/Dashboard'
 import TecnoacademiaProyectos from '@/pages/Tecnoacademia/Proyectos'
 
 import LaboratorioDashboard from '@/pages/Laboratorio/Dashboard'
-import LaboratorioEquipos from '@/pages/Laboratorio/Equipos'
-import LaboratorioIndicadores from '@/pages/Laboratorio/Indicadores'
 
 import InvestigacionDashboard from '@/pages/Investigacion/Dashboard'
 import InvestigacionPublicaciones from '@/pages/Investigacion/Publicaciones'
@@ -48,8 +46,6 @@ export default function AppRoutes() {
 
           <Route path="laboratorio">
             <Route index element={<LaboratorioDashboard />} />
-            <Route path="equipos" element={<LaboratorioEquipos />} />
-            <Route path="indicadores" element={<LaboratorioIndicadores />} />
           </Route>
 
           <Route path="investigacion">

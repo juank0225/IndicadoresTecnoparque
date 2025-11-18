@@ -126,3 +126,70 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* ──────────────── RESPONSIVE NAVBAR ──────────────── */
+
+/* Botón hamburguesa - ocultar en desktop */
+@media (min-width: 1024px) {
+  .components-navbar button[aria-label="Toggle menu"] {
+    display: none;
+  }
+}
+
+/* Menú móvil desplegable */
+.components-navbar .mobile-nav {
+  position: absolute;
+  top: 55px;
+  left: 0;
+  right: 0;
+  background: #39A900;
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  z-index: 50;
+}
+
+.components-navbar .mobile-nav a {
+  padding: 1rem 2rem !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  min-height: auto !important;
+}
+
+/* Contenedor del botón de perfil en móvil */
+.components-navbar .mobile-profile-container {
+  padding: 1rem 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Ajustes al botón de perfil en móvil */
+.components-navbar .mobile-profile-btn {
+  width: 100%;
+  display: flex !important;
+  justify-content: center;
+  right: 0 !important; /* Resetear el desplazamiento de desktop */
+  margin: 0;
+}
+
+/* Ajustar logo en tablets */
+@media (max-width: 1023px) {
+  .components-navbar .logo-sirt {
+    height: 36px;
+    margin-right: 1rem;
+    margin-left: 1rem;
+  }
+}
+
+/* Ajustar logo en móviles pequeños */
+@media (max-width: 640px) {
+  .components-navbar .logo-sirt {
+    height: 32px;
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+  }
+  
+  .components-navbar .mobile-nav a {
+    padding: 0.875rem 1.5rem !important;
+    font-size: 1rem;
+  }
+}

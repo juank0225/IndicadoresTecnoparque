@@ -1,4 +1,3 @@
-import React from 'react'
 import userDefault from "@/assets/user-default.svg"
 
 export default function PerfilUsuario() {
